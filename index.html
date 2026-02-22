@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্মার্ট ফ্যামিলি কার্ড | BNP Registration Portal</title>
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #006a4e; /* Deep Green */
+            --secondary-color: #ed1c24; /* Red */
+            --gold-color: #f1c40f;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Unique Background Shapes */
+        .bg-shape {
+            position: fixed;
+            z-index: -1;
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+        .shape-1 { width: 300px; height: 300px; background: rgba(0, 106, 78, 0.2); top: -50px; left: -50px; }
+        .shape-2 { width: 400px; height: 400px; background: rgba(237, 28, 36, 0.1); bottom: -100px; right: -50px; }
+
+        /* Banner Section */
+        .hero-section {
+            position: relative;
+            padding: 0;
+            margin-bottom: 50px;
+        }
+        .main-banner {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-bottom: 8px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Registration Form Container */
+        .reg-wrapper {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.5);
+            margin-top: -80px;
+            position: relative;
+            z-index: 100;
+        }
+
+        /* Animated Headlines */
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        .form-control {
+            border-radius: 12px;
+            padding: 12px 18px;
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(0,106,78,0.1);
+        }
+
+        .input-group-text {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 12px 0 0 12px;
+            border: none;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            background: linear-gradient(45deg, #006a4e, #009d73);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(0,106,78,0.3);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 25px rgba(0,106,78,0.4);
+            color: white;
+        }
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-submit:hover::after { left: 100%; }
+
+        /* Floating Badge */
+        .notice-badge {
+            background: var(--secondary-color);
+            color: white;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Ad Slots */
+        .ad-container {
+            margin: 30px 0;
+            text-align: center;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-weight: 500;
+        }
+
+        /* Progress Bar (Mockup) */
+        .target-bar {
+            height: 10px;
+            background: #ddd;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .progress-fill {
+            width: 85%;
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <!-- Top Banner -->
+    <section class="hero-section">
+        <img src="https://imgur.com/C9TeiEV.jpg" class="main-banner animate__animated animate__fadeInDown" alt="Main Banner">
+    </section>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <!-- Ad Slot 1 (468x60 Iframe) -->
+                <div class="ad-container animate__animated animate__fadeIn">
+                    <script type="text/javascript">
+                        atOptions = {
+                            'key' : 'cd25349806d768dd9cec23de891a6239',
+                            'format' : 'iframe',
+                            'height' : 60,
+                            'width' : 468,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://disappearinghew.com/cd25349806d768dd9cec23de891a6239/invoke.js"></script>
+                </div>
+
+                <!-- Registration Card -->
+                <div class="reg-wrapper animate__animated animate__fadeInUp">
+                    <div class="text-center">
+                        <span class="notice-badge"><i class="fas fa-flag"></i> শুধুমাত্র বাংলাদেশীদের জন্য</span>
+                        <h1 class="gradient-text">স্মার্ট ফ্যামিলি কার্ড রেজিস্ট্রেশন</h1>
+                        <p class="fw-bold text-muted mb-4">বিএনপি’র উদ্যোগে ১ কোটি পরিবারকে এই কার্ড প্রদান করা হবে।</p>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <small class="fw-bold">লক্ষ্যমাত্রা: ১ কোটি পরিবার</small>
+                            <div class="target-bar"><div class="progress-fill"></div></div>
+                        </div>
+                        <div class="col-6 text-end text-success fw-bold">
+                            <i class="fas fa-users"></i> রেজিস্ট্রেশন চলছে...
+                        </div>
+                    </div>
+
+                    <form id="regForm">
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <label class="form-label fw-bold"><i class="fas fa-user-circle text-success"></i> আবেদনকারীর পূর্ণ নাম</label>
+                                <input type="text" class="form-control" placeholder="আপনার পুরো নাম লিখুন" required>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fw-bold"><i class="fas fa-id-card text-success"></i> এনআইডি (NID) নম্বর</label>
+                                <input type="number" class="form-control" placeholder="১০ বা ১৭ ডিজিট" required>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fw-bold"><i class="fas fa-phone-alt text-success"></i> মোবাইল নম্বর</label>
+                                <input type="tel" class="form-control" placeholder="01XXXXXXXXX" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold"><i class="fas fa-map-marker-alt text-success"></i> পূর্ণ ঠিকানা</label>
+                            <textarea class="form-control" rows="3" placeholder="গ্রাম/মহল্লা, ডাকঘর, উপজেলা, জেলা" required></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold"><i class="fas fa-camera text-success"></i> এনআইডি কার্ডের ছবি আপলোড (Front Side)</label>
+                            <div class="input-group">
+                                <input type="file" class="form-control" accept="image/*" required>
+                            </div>
+                            <small class="text-danger mt-1 d-block font-size-12">* ফাইলটি অবশ্যই জেপিজি বা পিএনজি হতে হবে (সর্বোচ্চ ২এমবি)</small>
+                        </div>
+
+                        <!-- Ad Slot 2 (Container) -->
+                        <div class="ad-container my-4">
+                            <div id="container-b5662ff1d1603e73ba82848872d95bbc"></div>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane me-2"></i> এখনই আবেদন সাবমিট করুন
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Ad Slot 3 (90/73/c2...) -->
+                <div class="text-center mt-5">
+                    <script src="https://disappearinghew.com/90/73/c2/9073c2631c16eaba32648763f413d0d2.js"></script>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="animate__animated animate__fadeIn">
+        <hr class="container">
+        <p>© ২০২৪ স্মার্ট ফ্যামিলি কার্ড ম্যানেজমেন্ট সিস্টেম। <br> 
+        <small class="text-muted">গণতন্ত্র ও জনকল্যাণে আমরা প্রতিশ্রুতিবদ্ধ।</small></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script async="async" data-cfasync="false" src="https://disappearinghew.com/b5662ff1d1603e73ba82848872d95bbc/invoke.js"></script>
+
+    <script>
+        // Form Success Action
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.innerHTML = `
+                <div class="text-center py-5 animate__animated animate__zoomIn">
+                    <i class="fas fa-check-circle text-success fa-5x mb-3"></i>
+                    <h2 class="fw-bold">আবেদন সফল হয়েছে!</h2>
+                    <p>আপনার তথ্য সংরক্ষণ করা হয়েছে। আপনার এনআইডি যাচাইয়ের পর আমরা যোগাযোগ করব।</p>
+                    <button onclick="location.reload()" class="btn btn-outline-success mt-3">আরেকটি আবেদন করুন</button>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
